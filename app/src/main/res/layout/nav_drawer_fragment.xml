@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+
+    <LinearLayout
+        android:id="@+id/nav_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:theme="@style/AppTheme.NavigationView"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/ivAccount"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.14"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/vip" />
+
+        <TextView
+            android:id="@+id/txtLoginUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/username"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center" />
+
+
+
+
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/nav_header_container"
+        android:choiceMode="singleChoice"
+        android:groupIndicator="@null"
+        android:dividerHeight="0.5px"
+        android:childDivider="#00000000"/>
+
+   <!-- To add dividers to the parent and removing
+    dividers to the child
+
+    android:divider="@color/white"
+    android:dividerHeight="0.5px"
+    android:childDivider="#00000000"-->
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/nav_header_container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_width="match_parent"
+                android:layout_height="370dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:dividerHeight="0dp"
+                android:groupIndicator="@null"
+                android:layout_alignParentLeft="true" />
+
+
+            &lt;!&ndash;&ndash;&gt;
+
+        </RelativeLayout>
+    </ScrollView>-->
+
+    <!--<ImageView
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:src="@drawable/inventrax"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        />-->
+</RelativeLayout>

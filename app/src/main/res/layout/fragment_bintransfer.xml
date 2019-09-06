@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <LinearLayout
+            android:id="@+id/llScanLabelFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lblScanPart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/textViewStyle"
+                android:background="#fed5a4"
+                android:text="@string/scanPart"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:layout_weight="0.333" />
+            <TextView
+                android:id="@+id/lblScanFromLocation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/textViewStyle"
+                android:layout_weight="0.333"
+                android:text="@string/scanFromLocation"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:background="#fed5a4"/>
+
+            <TextView
+                android:id="@+id/lblScanFromContainer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                style="@style/textViewStyle"
+                android:background="#fed5a4"
+                android:gravity="center_vertical"
+                android:text="@string/scanFromContainer"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.333" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llScanLabelFrom"
+            android:layout_marginTop="5dp">
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutBatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/etBatch"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintBatch"
+                    style="@style/editTextStyle"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutSerial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/etSerial"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:hint="@string/hintSerial"
+                     />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutMfgDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtInputLayoutBatch">
+                <EditText
+                    android:id="@+id/etMfgDate"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintMfgDate"
+                    style="@style/editTextStyle"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutExpDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtInputLayoutBatch">
+                <EditText
+                    android:id="@+id/etExpDate"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="175dp"
+                    android:hint="@string/hintExpDate"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutProjectRef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtInputLayoutMfgDate">
+                <EditText
+                    android:id="@+id/etProjectRef"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintProjectRef"
+                    style="@style/editTextStyle"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvAvailableQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/availableQty"
+                style="@style/textViewStyle"
+                android:layout_below="@+id/txtInputLayoutMfgDate"
+                android:layout_marginLeft="178dp"/>
+            <TextView
+                android:id="@+id/lblAvailableQty"
+                style="@style/textViewStyle"
+                android:layout_width="110dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/tvAvailableQty"
+                android:layout_marginLeft="178dp"
+                android:background="#f6f0ba" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_span="3"
+                android:background="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/txtInputLayoutProjectRef"></View>
+
+            <LinearLayout
+                android:id="@+id/llScanLabelTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/view">
+
+                <TextView
+                    android:id="@+id/lblScanToLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    style="@style/textViewStyle"
+                    android:text="@string/scanToLocation"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:background="#fed5a4"/>
+
+                <TextView
+                    android:id="@+id/lblScanToContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    style="@style/textViewStyle"
+                    android:layout_marginTop="5dp"
+                    android:background="#fed5a4"
+                    android:gravity="center_vertical"
+                    android:text="@string/scanToContainer"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sloc"
+                android:layout_marginLeft="185dp"
+                style="@style/textViewStyle"
+                android:layout_below="@+id/llScanLabelTo"
+                android:layout_marginTop="5dp">
+            </TextView>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayoutCCQty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llScanLabelTo"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/etQuantity"
+                    android:layout_width="145dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintQuantity"
+                    style="@style/editTextStyle" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerSelectSloc"
+                android:layout_width="180dp"
+                android:layout_height="42dp"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_alignBottom="@+id/txtInputLayoutCCQty"
+                android:layout_toEndOf="@+id/txtInputLayoutProjectRef"
+                android:layout_toRightOf="@+id/txtInputLayoutProjectRef">
+            </Spinner>
+
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/txtInputLayoutCCQty"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/close"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/clear"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_alignBottom="@+id/btnClose"
+                android:layout_marginLeft="70dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignTop="@+id/btnClose" />
+
+            <Button
+                android:id="@+id/btnTransfer"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="@drawable/button_shape"
+                android:text="@string/transfer"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_alignBottom="@+id/btnClear"
+                android:layout_toRightOf="@+id/btnClear"
+                android:layout_toEndOf="@+id/btnClear" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

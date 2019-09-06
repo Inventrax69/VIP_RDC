@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginRight="5dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardUseCompatPadding="true"
+    android:layout_marginTop="5dp">
+
+    <TextView
+        android:id="@+id/lblColor"
+        android:layout_width="7dp"
+        android:layout_height="match_parent"
+        android:gravity="left"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/txtSKU"
+                android:layout_width="233dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="SKU"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="268dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtSKU"
+                android:gravity="left"
+                android:text="Dufful bag 123d-e5k abcdef "
+                android:textSize="10sp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtQty"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_vertical|right"
+                android:gravity="center"
+                android:text="Actual Qty. / Planned Qty."
+                android:textColor="@color/colorAccent"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

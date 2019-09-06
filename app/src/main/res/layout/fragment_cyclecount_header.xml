@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusableInTouchMode="true"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlCCHeaderOne"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:visibility="visible">
+        <TextView
+            android:id="@+id/tvSelectCycleCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selectCC"
+            style="@style/textViewStyleSmall"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="15dp"
+            android:textStyle="normal"/>
+
+        <com.example.karthikm.merlinwmscipher_vip_rdc.SearchableSpinner.SearchableSpinner
+            android:id="@+id/spinnerSelectCycleCount"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:layout_below="@+id/tvSelectCycleCount">
+        </com.example.karthikm.merlinwmscipher_vip_rdc.SearchableSpinner.SearchableSpinner>
+
+        <Button
+            android:id="@+id/btnGo"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/button_shape"
+            android:elevation="30dp"
+            android:text="@string/go"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/btnCloseOne"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_close_shape"
+            android:elevation="30dp"
+            android:foreground="@drawable/button_cross_close"
+            android:foregroundGravity="center"
+            android:text="@string/putaway"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlCCHeaderTwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="8">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvCycleCount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/cycleCount"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/lblCycleCount"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvSuggestedLoc"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/suggestedLoc"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+
+                <TextView
+                    android:id="@+id/lblSuggestedLoc"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvScanLocation"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:cardBackgroundColor="@color/locationColor"
+                app:cardCornerRadius="27.5dp"
+                app:cardElevation="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/ivScanLocation"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fullscreen_img" />
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvScanLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/scanLocation"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/viewOne"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/black"
+                android:alpha="0.1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                >
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtInputLayoutLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/etLocation"
+                        style="@style/editTextStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/hintLocation"
+                        android:inputType="number"
+                        android:enabled="false"/>
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txtInputLayoutBoxQty"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/etBoxQty"
+                        style="@style/editTextStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/hintBoxQty"
+                        android:inputType="number"/>
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/lblTotalNoOfLocationsToScan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/NoOfLocationsScanned"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <View
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/tvTotalNoOfLocationsToScan"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic|bold"/>
+                <View
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                     />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBinComplete"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_shape"
+            android:elevation="30dp"
+            android:text="@string/binComplete"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_above="@+id/btnCloseTwo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"/>
+        <Button
+            android:id="@+id/btnCloseTwo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_close_shape"
+            android:elevation="30dp"
+            android:foreground="@drawable/button_cross_close"
+            android:foregroundGravity="center"
+            android:text="@string/putaway"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
