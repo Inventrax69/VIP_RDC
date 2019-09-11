@@ -452,11 +452,6 @@
                 android:layout_alignParentBottom="true"
                 android:weightSum="3.2">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
-
 
                 <Button
                     android:id="@+id/btnUpdate"
@@ -465,14 +460,12 @@
                     android:background="@drawable/button_shape"
                     android:elevation="30dp"
                     android:text="@string/update"
+                    android:visibility="gone"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:layout_weight="1.2"/>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
+
 
                 <Button
                     android:id="@+id/btnPalletComplete"
@@ -485,10 +478,7 @@
                     android:textColor="@color/white"
                     android:layout_weight="1.2"/>
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2" />
+
 
 
             </LinearLayout>
