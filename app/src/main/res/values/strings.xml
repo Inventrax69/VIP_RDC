@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VIP RDC</string>
+    <string name="app_name">FalconWMS_RDC</string>
     <!-- Navigation Drawer -->
 
     <string name="drawer_open">Open</string>
