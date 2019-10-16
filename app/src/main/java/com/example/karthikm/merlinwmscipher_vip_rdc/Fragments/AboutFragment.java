@@ -41,12 +41,12 @@ public class AboutFragment extends Fragment implements View.OnClickListener{
         loadFormControls();
 
         return rootView;
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
     }
 
     @Override
@@ -81,7 +81,7 @@ public class AboutFragment extends Fragment implements View.OnClickListener{
 
             lblReleaseDate=(TextView) rootView.findViewById(R.id.lblReleaseDate);
             txtReleaseDate=(TextView)rootView.findViewById(R.id.txtReleaseDate);
-            txtReleaseDate.setText("18-09-2019");
+            txtReleaseDate.setText("04-10-2019");
 
         }catch (Exception ex){
             Log.d(AboutFragment.class.getName(), ex.toString());
@@ -114,6 +114,7 @@ public class AboutFragment extends Fragment implements View.OnClickListener{
                     updateServiceUtils.checkUpdate();
 
                     ProgressDialogUtils.closeProgressDialog();
+
                 }catch (Exception ex){
 
                     ProgressDialogUtils.closeProgressDialog();
@@ -147,6 +148,7 @@ public class AboutFragment extends Fragment implements View.OnClickListener{
                     DialogUtils.showAlertDialog(getActivity(),"Error while opening youtube");
 
                 }
+
 
             }break;
         }

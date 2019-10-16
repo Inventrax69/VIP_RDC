@@ -46,8 +46,7 @@ import java.net.URL;
  * to 3G).
  *
  */
-public class SimpleHttpVersionCheckStrategy implements
-        VersionCheckStrategy {
+public class SimpleHttpVersionCheckStrategy implements VersionCheckStrategy {
     /**
      * Required to complete Parcelable interface. Creates
      * an SimpleHttpVersionCheckStrategy instance or array
@@ -89,8 +88,7 @@ public class SimpleHttpVersionCheckStrategy implements
      */
     @Override
     public int getVersionCode() throws Exception {
-        HttpURLConnection conn =
-                (HttpURLConnection) new URL(url).openConnection();
+        HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
         int result = -1;
 
         try {
@@ -115,10 +113,9 @@ public class SimpleHttpVersionCheckStrategy implements
 
                 result = json.getInt(JSON_VERSION_CODE);
                 updateURL = json.getString(JSON_UPDATE_URL);
+
             } else {
-                throw new RuntimeException(
-                        String.format("Received %d from server",
-                                status));
+                throw new RuntimeException(String.format("Received %d from server", status));
             }
         } finally {
             conn.disconnect();

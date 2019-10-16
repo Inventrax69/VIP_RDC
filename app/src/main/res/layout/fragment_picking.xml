@@ -117,7 +117,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.4"
+                android:layout_weight="0.3"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:text="Customer Name"/>
+
+
+                <TextView
+                    android:id="@+id/lblCustomerName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:gravity="right|center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:singleLine="true"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -140,7 +171,8 @@
                     android:gravity="right|center_vertical"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
 
             </LinearLayout>
@@ -149,7 +181,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.4"
+                android:layout_weight="0.3"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -157,22 +189,44 @@
                     android:id="@+id/tvSKUSuggested"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.4"
                     android:gravity="center_vertical"
                     android:text="@string/sku"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_weight="0.5"/>
+
 
                 <TextView
                     android:id="@+id/lblSKUSuggested"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    />
+
+                <!--<TextView
+
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.6"
+                    android:layout_weight="0.3"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:text="MRP:"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />-->
+
+                <TextView
+                    android:id="@+id/lblMRP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:text="- 12584/-"/>
 
 
             </LinearLayout>
@@ -180,24 +234,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.7"
+                android:layout_weight="0.65"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <View
+
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.4"
+                    android:layout_weight="0.3"
                     />
 
                 <TextView
                     android:id="@+id/lblScannedSkuItem"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1.6"
                     android:textColor="@color/black"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_weight="1.7"
+                   />
 
 
             </LinearLayout>
@@ -484,7 +540,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1.1"
+                android:layout_weight="1.0"
                 android:orientation="horizontal"
                 android:weightSum="1">
 

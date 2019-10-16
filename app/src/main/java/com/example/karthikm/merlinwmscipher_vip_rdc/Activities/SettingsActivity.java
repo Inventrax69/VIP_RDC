@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.karthikm.merlinwmscipher_vip_rdc.R;
 import com.example.karthikm.merlinwmscipher_vip_rdc.common.constants.ServiceURL;
@@ -54,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
            sharedPreferencesUtils = new SharedPreferencesUtils("SettingsActivity", getApplicationContext());
            inputService.setText(sharedPreferencesUtils.loadPreference("url"));
            if(inputService.getText().toString().isEmpty()) {
-               inputService.setText("http://192.168.1.80/vip_rdc_api/");
+               inputService.setText("http://192.168.1.20/vip_rdc_api/");
            }
 
     }

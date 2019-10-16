@@ -32,9 +32,7 @@ public class InternalHttpDownloadStrategy extends
     }
 
     @Override
-    protected OutputStream openDownloadFile(Context ctxt, File apk)
-            throws FileNotFoundException {
-        return (ctxt.openFileOutput("update.apk",
-                Context.MODE_WORLD_READABLE));
+    protected OutputStream openDownloadFile(Context ctxt, File apk) throws FileNotFoundException {
+        return (ctxt.openFileOutput("update.apk", Context.MODE_WORLD_READABLE));
     }
 }

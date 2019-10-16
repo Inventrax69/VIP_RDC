@@ -11,7 +11,7 @@
     <string name="btnSubmit">Login</string>
     <string name="rememberMe">Remember me</string>
     <string name="username">Username</string>
-
+    <string name="dont_cancel">Don\'t cancel</string>
     <string name="hintUser">Enter Username</string>
     <string name="hintPass">Enter Password</string>
 

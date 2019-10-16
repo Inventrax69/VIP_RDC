@@ -39,8 +39,7 @@ public class UpdateService extends WakefulIntentService {
                 install(req, req.getInstallUri());
             } else {
                 int updateVersionCode = vcs.getVersionCode();
-                int currentVersionCode =
-                        getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+                int currentVersionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
 
                 if (updateVersionCode > currentVersionCode) {
                     ConfirmationStrategy strategy =
@@ -48,8 +47,7 @@ public class UpdateService extends WakefulIntentService {
 
                     if (strategy == null
                             || strategy.confirm(this,
-                            buildDownloadPhase(cmd,
-                                    vcs.getUpdateURL()))) {
+                            buildDownloadPhase(cmd, vcs.getUpdateURL()))) {
                         downloadAndInstall(cmd, req, vcs.getUpdateURL());
                     }
                 } else if (updateVersionCode < currentVersionCode) {

@@ -20,6 +20,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.app.NotificationCompat;
+import android.util.Log;
 
 import com.example.karthikm.merlinwmscipher_vip_rdc.R;
 
@@ -32,6 +33,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SimpleHttpDownloadStrategy implements DownloadStrategy {
+
     public static final Parcelable.Creator<SimpleHttpDownloadStrategy> CREATOR =
             new Parcelable.Creator<SimpleHttpDownloadStrategy>() {
                 public SimpleHttpDownloadStrategy createFromParcel(Parcel in) {
@@ -59,8 +61,6 @@ public class SimpleHttpDownloadStrategy implements DownloadStrategy {
                 .setSmallIcon(R.mipmap.in_launcher);
         mBuilder.setAutoCancel(false);
 
-
-
         HttpURLConnection conn =
                 (HttpURLConnection) new URL(url).openConnection();
 
@@ -85,9 +85,7 @@ public class SimpleHttpDownloadStrategy implements DownloadStrategy {
                 f.close();
                 is.close();
             } else {
-                throw new RuntimeException(
-                        String.format("Received %d from server",
-                                status));
+                throw new RuntimeException(String.format("Received %d from server", status));
             }
         } finally {
             conn.disconnect();
@@ -96,7 +94,6 @@ public class SimpleHttpDownloadStrategy implements DownloadStrategy {
                     .setProgress(0, 0, false);
             mNotifyManager.notify(1, mBuilder.build());
             mNotifyManager.cancel(1);
-
         }
 
         return (getDownloadUri(ctxt, apk));
@@ -113,11 +110,8 @@ public class SimpleHttpDownloadStrategy implements DownloadStrategy {
     }
 
     protected File getDownloadFile(Context ctxt) {
-        File updateDir =
-                new File(ctxt.getExternalFilesDir(null), ".CWAC-Update");
-
+        File updateDir = new File(ctxt.getExternalFilesDir(null), ".CWAC-Update");
         updateDir.mkdirs();
-
         return (new File(updateDir, "update.apk"));
     }
 
@@ -126,6 +120,7 @@ public class SimpleHttpDownloadStrategy implements DownloadStrategy {
     }
 
     protected Uri getDownloadUri(Context ctxt, File apk) {
+        Log.v("ABCDE",Uri.fromFile(apk).toString());
         return (Uri.fromFile(apk));
     }
 }

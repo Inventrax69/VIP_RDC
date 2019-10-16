@@ -1,6 +1,5 @@
 package com.example.karthikm.merlinwmscipher_vip_rdc.common.collections;
 
-import com.android.internal.util.Predicate;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -105,7 +104,7 @@ public class Lists {
         return (list == null) || list.isEmpty();
     }
 
-    public static <T> List<T> filter(List<T> unfilteredList, Predicate<T> predicate) {
+/*    public static <T> List<T> filter(List<T> unfilteredList, Predicate<T> predicate) {
         List<T> filteredList = Lists.newArrayList();
         for (T each : unfilteredList) {
             if (predicate.apply(each)) {
@@ -113,7 +112,7 @@ public class Lists {
             }
         }
         return filteredList;
-    }
+    }*/
 
     public static boolean intersect(Collection<?> a, Collection<?> b) {
         return !Collections.disjoint(a, b);

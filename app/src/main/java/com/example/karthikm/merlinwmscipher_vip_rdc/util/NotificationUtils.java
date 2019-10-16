@@ -6,7 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 
 import com.example.karthikm.merlinwmscipher_vip_rdc.R;
 
@@ -75,6 +75,7 @@ public class NotificationUtils {
                         //.setContentIntent(contentIntent)
                 .setPriority(Notification.PRIORITY_HIGH)
                 .setVibrate(new long[]{1000, 1000, 1000, 1000, 1000}).build();
+
 
         return  notification;
     }

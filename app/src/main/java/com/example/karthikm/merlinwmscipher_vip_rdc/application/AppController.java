@@ -2,16 +2,8 @@ package com.example.karthikm.merlinwmscipher_vip_rdc.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.StrictMode;
 import android.support.multidex.MultiDex;
-
-
-import com.example.karthikm.merlinwmscipher_vip_rdc.R;
-
-import org.acra.ACRA;
-import org.acra.ReportField;
-import org.acra.ReportingInteractionMode;
-import org.acra.annotation.ReportsCrashes;
-
 import java.util.Map;
 
 
@@ -23,17 +15,12 @@ public class AppController extends Application {
     private  Context appContext;
     public static Map<String,String> mapUserRoutes;
 
-
-
-
     public static synchronized AppController getInstance() {
         return mInstance;
     }
 
-
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-
     }
 
     @Override
@@ -47,8 +34,8 @@ public class AppController extends Application {
         AbstractApplication.CONTEXT = getApplicationContext();
         appContext= getApplicationContext();
         //LocaleHelper.onCreate(this, "en");
-
-
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         //LocaleHelper.onCreate(this, "en");
 
     }
@@ -58,7 +45,6 @@ public class AppController extends Application {
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-
         System.runFinalization();
         Runtime.getRuntime().gc();
         System.gc();

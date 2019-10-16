@@ -73,6 +73,7 @@
         <service android:name=".Services.appupdate.UpdateService" />
 
         <receiver android:name=".Services.appupdate.WakefulReceiver" />
+
         <receiver
             android:name=".Services.gcm.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
@@ -85,6 +86,16 @@
         </receiver>
 
         <service android:name=".Services.gcm.GCMNotificationIntentService" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.karthikm.merlinwmscipher_vip_rdc.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/vip_fileprovider" />
+        </provider>
 
     </application>
 

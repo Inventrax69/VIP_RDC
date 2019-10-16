@@ -79,6 +79,8 @@ public class OutbountDTO {
     private String selectedTripsheetRefNumber;
     @SerializedName("TripSheetRefNo")
     private List<String> TripSheetRefNo;
+    @SerializedName("CustomerName")
+    private String customerName;
 
 
     public OutbountDTO() {
@@ -270,6 +272,14 @@ public class OutbountDTO {
                         this.setTripSheetRefNo((List<String>) entry.getValue());
                     }
                     break;
+
+                case "CustomerName":
+                    if (entry.getValue() != null) {
+                        this.setCustomerName(entry.getValue().toString());
+                    }
+                    break;
+
+
             }
         }
     }
@@ -539,5 +549,13 @@ public class OutbountDTO {
 
     public void setSelectedTripsheetRefNumber(String selectedTripsheetRefNumber) {
         this.selectedTripsheetRefNumber = selectedTripsheetRefNumber;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 }

@@ -30,22 +30,14 @@ public class UpdateRequest {
     public static final int PHASE_DOWNLOAD = 3;
     public static final int PHASE_PRE_INSTALL = 4;
     public static final int PHASE_INSTALL = 5;
-    static final String EXTRA_COMMAND =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_COMMAND";
-    private static final String EXTRA_VCS =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_VCS";
-    private static final String EXTRA_CONFIRM_DOWNLOAD =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_CONFIRM_DOWNLOAD";
-    private static final String EXTRA_PHASE =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_PHASE";
-    private static final String EXTRA_DS =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_DS";
-    private static final String EXTRA_CONFIRM_INSTALL =
-            "com.commonsware.cwac.updater.EXTRA_CONFIRM_INSTALL";
-    private static final String EXTRA_UPDATE_URL =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_UPDATE_URL";
-    private static final String EXTRA_INSTALL_URI =
-            "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_INSTALL_URI";
+    static final String EXTRA_COMMAND = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_COMMAND";
+    private static final String EXTRA_VCS = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_VCS";
+    private static final String EXTRA_CONFIRM_DOWNLOAD = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_CONFIRM_DOWNLOAD";
+    private static final String EXTRA_PHASE = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_PHASE";
+    private static final String EXTRA_DS = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_DS";
+    private static final String EXTRA_CONFIRM_INSTALL = "com.commonsware.cwac.updater.EXTRA_CONFIRM_INSTALL";
+    private static final String EXTRA_UPDATE_URL = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_UPDATE_URL";
+    private static final String EXTRA_INSTALL_URI = "com.example.karthikm.merlinwmscipher.Services.appupdate.EXTRA_INSTALL_URI";
     protected Intent cmd = null;
 
     UpdateRequest(Intent cmd) {

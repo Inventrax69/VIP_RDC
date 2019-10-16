@@ -78,7 +78,7 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
     ImageView ivScanLocation, ivScanPallet, ivScanSku, ivScanNewRSN;
     Button btnGo, btnCloseOne, btnMaterialSkip, btnItemNotFound, btnCloseTwo, btnOk, btnCloseThree;
     RelativeLayout rlPickListOne, rlPickListTwo, rlSelect;
-    TextView lblPickListNo, lblDockNo, lblLocationSuggested, lblScannedSku, lblSKUSuggested, lblRequiredQty,
+    TextView lblPickListNo, lblDockNo,lblCustomerName, lblLocationSuggested,lblMRP, lblScannedSku, lblSKUSuggested, lblRequiredQty,
             lblPickedQty, lblScanNewRSN, lblDesc;
     CardView cvScanLocation, cvScanPallet, cvScanSku, cvScanNewRSN;
     SearchableSpinner spinnerSelectPickList, spinnerSelectReason;
@@ -144,7 +144,7 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
         ivScanPallet = (ImageView) rootView.findViewById(R.id.ivScanPallet);
         ivScanSku = (ImageView) rootView.findViewById(R.id.ivScanSku);
         ivScanNewRSN = (ImageView) rootView.findViewById(R.id.ivScanNewRSN);
-        //DrawableCompat.setTint(isDockScanned.getDrawable(), ContextCompat.getColor(getContext(), R.color.green));
+
         btnGo = (Button) rootView.findViewById(R.id.btnGo);
         btnCloseOne = (Button) rootView.findViewById(R.id.btnCloseOne);
         btnItemNotFound = (Button) rootView.findViewById(R.id.btnItemNotFound);
@@ -155,8 +155,10 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
         lblDockNo = (TextView) rootView.findViewById(R.id.lblDockNo);
         lblScannedSku = (TextView) rootView.findViewById(R.id.lblScannedSku);
 
+        lblCustomerName = (TextView) rootView.findViewById(R.id.lblCustomerName);
         lblLocationSuggested = (TextView) rootView.findViewById(R.id.lblLocationSuggested);
         lblSKUSuggested = (TextView) rootView.findViewById(R.id.lblSKUSuggested);
+        lblMRP = (TextView) rootView.findViewById(R.id.lblMRP);
         lblRequiredQty = (TextView) rootView.findViewById(R.id.lblRequiredQty);
         lblPickedQty = (TextView) rootView.findViewById(R.id.lblPickedQty);
         lblScanNewRSN = (TextView) rootView.findViewById(R.id.lblScanNewRSN);
@@ -552,6 +554,8 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
         lblRequiredQty.setText("");
         lblPickedQty.setText("");
         lblSKUSuggested.setText("");
+        lblCustomerName.setText("");
+        lblMRP.setText("");
         lblLocationSuggested.setText("");
         lblDockNo.setText("");
         lblScannedSku.setText("");
@@ -787,12 +791,12 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
                                                 btnItemNotFound.setVisibility(GONE);
                                                 btnMaterialSkip.setVisibility(GONE);
                                                 lblSKUSuggested.setText("");
+                                                lblMRP.setText("");
                                                 lblScannedSku.setText("");
                                                 lblScanNewRSN.setText("");
                                                 cvScanSku.setCardBackgroundColor(getResources().getColor(R.color.skuColor));
                                                 ivScanSku.setImageResource(R.drawable.fullscreen_img);
                                                 lblDesc.setText("");
-
                                                 ClearFields();
                                             } else {
 
@@ -801,8 +805,10 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
                                                 ivScanSku.setImageResource(R.drawable.fullscreen_img);
                                                 btnMaterialSkip.setVisibility(View.VISIBLE);
                                                 lblDockNo.setText(oOutboundDTO.getDockNumber());
+                                                lblCustomerName.setText(oOutboundDTO.getCustomerName());
                                                 lblLocationSuggested.setText(oOutboundDTO.getLocation());
                                                 lblSKUSuggested.setText(oOutboundDTO.getSKU());
+                                                lblMRP.setText("-" + String.valueOf(oOutboundDTO.getMRP()) + " /-");
                                                 lblRequiredQty.setText(oOutboundDTO.getRequiredQty());
                                                 lblPickedQty.setText(oOutboundDTO.getPickedQty());
                                                 SuggestedId = oOutboundDTO.getSuggestionID();
@@ -1601,6 +1607,8 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
                                         btnItemNotFound.setVisibility(GONE);
                                         btnMaterialSkip.setVisibility(GONE);
                                         lblSKUSuggested.setText("");
+                                        lblMRP.setText("");
+                                        lblCustomerName.setText("");
                                         lblScannedSku.setText("");
                                         lblScanNewRSN.setText("");
                                         cvScanSku.setCardBackgroundColor(getResources().getColor(R.color.skuColor));
@@ -1613,7 +1621,9 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
 
                                         lblDockNo.setText(oOutboundDTO.getDockNumber());
                                         lblLocationSuggested.setText(oOutboundDTO.getLocation());
+                                        lblCustomerName.setText(oOutboundDTO.getCustomerName());
                                         lblSKUSuggested.setText(oOutboundDTO.getSKU());
+                                        lblMRP.setText("-" + String.valueOf(oOutboundDTO.getMRP()) + " /-");
                                         lblRequiredQty.setText(oOutboundDTO.getRequiredQty());
                                         lblPickedQty.setText(oOutboundDTO.getPickedQty());
                                         lblDesc.setText(oOutboundDTO.getMaterialDescription());
@@ -1788,6 +1798,8 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
                                                 btnItemNotFound.setVisibility(GONE);
                                                 btnMaterialSkip.setVisibility(GONE);
                                                 lblSKUSuggested.setText("");
+                                                lblMRP.setText("");
+                                                lblCustomerName.setText("");
                                                 lblScannedSku.setText("");
                                                 lblScanNewRSN.setText("");
                                                 lblDesc.setText("");
@@ -1802,7 +1814,9 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
 
                                                 lblDockNo.setText(oOutboundDTO.getDockNumber());
                                                 lblLocationSuggested.setText(oOutboundDTO.getLocation());
+                                                lblCustomerName.setText(oOutboundDTO.getCustomerName());
                                                 lblSKUSuggested.setText(oOutboundDTO.getSKU());
+                                                lblMRP.setText("-" + String.valueOf(oOutboundDTO.getMRP()) + " /-");
                                                 lblRequiredQty.setText(oOutboundDTO.getRequiredQty());
                                                 lblPickedQty.setText(oOutboundDTO.getPickedQty());
                                                 SuggestedId = oOutboundDTO.getSuggestionID();
@@ -1873,138 +1887,6 @@ public class OutboundFragment extends Fragment implements View.OnClickListener, 
         }
     }
 
-    public void MarkMaterialDamaged() {
-
-        try {
-            WMSCoreMessage message = new WMSCoreMessage();
-            message = common.SetAuthentication(EndpointConstants.Outbound, getContext());
-            OutbountDTO outbountDTO = new OutbountDTO();
-            outbountDTO.setUserId(userId);
-            outbountDTO.setLocation(lblLocationSuggested.getText().toString());
-            outbountDTO.setDockNumber(lblDockNo.getText().toString());
-            outbountDTO.setSKU(lblSKUSuggested.getText().toString());
-            outbountDTO.setRequiredQty(lblRequiredQty.getText().toString());
-            outbountDTO.setPickedQty(lblPickedQty.getText().toString());
-            outbountDTO.setPalletNo(etPallet.getText().toString());
-            message.setEntityObject(outbountDTO);
-
-            Call<String> call = null;
-            ApiInterface apiService =
-                    RestService.getClient().create(ApiInterface.class);
-
-            try {
-                //Checking for Internet Connectivity
-                // if (NetworkUtils.isInternetAvailable()) {
-                // Calling the Interface method
-                ProgressDialogUtils.showProgressDialog("Please Wait");
-                call = apiService.MarkMaterialDamaged(message);
-                // } else {
-                // DialogUtils.showAlertDialog(getActivity(), "Please enable internet");
-                // return;
-
-                // }
-
-            } catch (Exception ex) {
-                try {
-                    exceptionLoggerUtils.createExceptionLog(ex.toString(), classCode, "008_01", getActivity());
-                    logException();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                ProgressDialogUtils.closeProgressDialog();
-                common.showUserDefinedAlertType(errorMessages.EMC_0002, getActivity(), getContext(), "Error");
-
-            }
-            try {
-                //Getting response from the method
-                call.enqueue(new Callback<String>() {
-
-                    @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-
-                        try {
-                            core = gson.fromJson(response.body().toString(), WMSCoreMessage.class);
-                            if (core != null) {
-                                if ((core.getType().toString().equals("Exception"))) {
-                                    List<LinkedTreeMap<?, ?>> _lExceptions = new ArrayList<LinkedTreeMap<?, ?>>();
-                                    _lExceptions = (List<LinkedTreeMap<?, ?>>) core.getEntityObject();
-
-                                    WMSExceptionMessage owmsExceptionMessage = null;
-                                    for (int i = 0; i < _lExceptions.size(); i++) {
-
-                                        owmsExceptionMessage = new WMSExceptionMessage(_lExceptions.get(i).entrySet());
-
-
-                                    }
-                                    ProgressDialogUtils.closeProgressDialog();
-                                    common.showAlertType(owmsExceptionMessage, getActivity(), getContext());
-                                } else {
-
-                                    rlPickListTwo.setVisibility(View.VISIBLE);
-                                    List<LinkedTreeMap<?, ?>> _lstPickitem = new ArrayList<LinkedTreeMap<?, ?>>();
-                                    _lstPickitem = (List<LinkedTreeMap<?, ?>>) core.getEntityObject();
-                                    List<OutbountDTO> _lstOutboundDTO = new ArrayList<OutbountDTO>();
-                                    OutbountDTO oOutboundDTO = null;
-                                    for (int i = 0; i < _lstPickitem.size(); i++) {
-
-                                        oOutboundDTO = new OutbountDTO(_lstPickitem.get(i).entrySet());
-                                        _lstOutboundDTO.add(oOutboundDTO);
-
-                                    }
-
-                                    ProgressDialogUtils.closeProgressDialog();
-                                    lblDockNo.setText(oOutboundDTO.getDockNumber());
-                                    lblLocationSuggested.setText(oOutboundDTO.getLocation());
-                                    lblSKUSuggested.setText(oOutboundDTO.getSKU());
-                                    lblRequiredQty.setText(oOutboundDTO.getRequiredQty());
-                                    lblPickedQty.setText(oOutboundDTO.getPickedQty());
-                                    lblPickListNo.setText(pickRefNo + "-" + oOutboundDTO.getCustomerCode());
-                                    if (oOutboundDTO.getStrictComplianceToPicking()) {
-                                        IsStrictlycomplaince = true;
-                                    }
-                                }
-                            }
-                        } catch (Exception ex) {
-                            try {
-                                exceptionLoggerUtils.createExceptionLog(ex.toString(), classCode, "008_02", getActivity());
-                                logException();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            ProgressDialogUtils.closeProgressDialog();
-                        }
-
-
-                    }
-
-                    // response object fails
-                    @Override
-                    public void onFailure(Call<String> call, Throwable throwable) {
-                        ProgressDialogUtils.closeProgressDialog();
-                        DialogUtils.showAlertDialog(getActivity(), errorMessages.EMC_0001);
-                    }
-                });
-            } catch (Exception ex) {
-                try {
-                    exceptionLoggerUtils.createExceptionLog(ex.toString(), classCode, "008_03", getActivity());
-                    logException();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                ProgressDialogUtils.closeProgressDialog();
-                common.showUserDefinedAlertType(errorMessages.EMC_0001, getActivity(), getContext(), "Error");
-            }
-        } catch (Exception ex) {
-            try {
-                exceptionLoggerUtils.createExceptionLog(ex.toString(), classCode, "008_04", getActivity());
-                logException();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            ProgressDialogUtils.closeProgressDialog();
-            common.showUserDefinedAlertType(errorMessages.EMC_0003, getActivity(), getContext(), "Error");
-        }
-    }
 
     // sending exception to the database
     public void logException() {
