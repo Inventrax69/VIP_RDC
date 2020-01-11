@@ -131,6 +131,7 @@
     <string name="title_activity_mrpchanges">MRP Changes</string>
     <string name="title_activity_unloading">Unloading</string>
     <string name="title_activity_packing">Packing</string>
+    <string name="title_activity_rsn_print">RSN Print</string>
     <string name="generatepackSlip">Generate pack Slip</string>
     <string name="nesting_denesting">Nesting/De Nesting</string>
 
@@ -205,4 +206,5 @@
     <string name="title_activity_rsn_tracking">RSN Tracking</string>
     <string name="scan_packing_slip">Scan Packing slip</string>
     <string name="print">Print</string>
+    <string name="submit">Submit</string>
 </resources>

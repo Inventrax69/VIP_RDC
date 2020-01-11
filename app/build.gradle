@@ -11,8 +11,8 @@ android {
         applicationId "com.example.karthikm.merlinwmscipher_vip_rdc"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3
-        versionName "2.1"
+        versionCode 4
+        versionName "2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
